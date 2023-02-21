@@ -18,9 +18,9 @@ jobs:
       - name: Run a multi-line script
         id: teeest
         run: |
-          file="test"
+          file="test234"
           echo "test $file, IPA_PATH=$file"
-          echo "testing=$file" >> $GITHUB_ENV
+          echo "IPA_PATH=$file" >> $GITHUB_ENV
       - name: test2
-        run: echo "${{ env }} ${{ github.repository }} ${{ env.CI }} ${{ env.testing }}"    
+        run: echo "${{ env }} ${{ github.repository }} ${{ env.CI }} ${{ env.IPA_PATH }}"    
         

@@ -19,8 +19,8 @@ jobs:
         id: teeest
         run: |
           file="test"
-          echo "test $file"
-          echo "IPA_PATH=$file" >> $GITHUB_OUTPUT
+          echo "test $file, IPA_PATH=$file"
+          echo "testing=$file" >> $GITHUB_ENV
       - name: test2
-        run: echo "${{ steps.teeest.outputs }} ${{ github.repository }} ${{ env.CI }} ${{ steps.teeest.IPA_PATH }}"    
+        run: echo "${{ env }} ${{ github.repository }} ${{ env.CI }} ${{ env.testing }}"    
         
